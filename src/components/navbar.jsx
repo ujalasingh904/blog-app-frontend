@@ -81,7 +81,7 @@ const Navbar = () => {
                     <Link to="/posts?sort=saved" onClick={() => setOpen(false)}>Saved posts</Link>
                     <Link to="/write" onClick={() => setOpen(false)}>Write a blog</Link>
                     <SignedOut>
-                        <Link to="/login">
+                        <Link to="/login" onClick={() => setOpen(false)} >
                             <button className="py-2 px-4 rounded-3xl bg-blue-800 text-white">
                                 Login 👋
                             </button>
