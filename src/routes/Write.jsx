@@ -66,7 +66,26 @@ const Write = () => {
       content: value,
     };
 
-    console.log("data from write is", data);  
+      if (!data.img) {
+        toast.error("Add a cover image");
+        return;
+      }
+      if (!data.title) {
+        toast.error("Title is required");
+        return;
+      }
+      if (!data.category) {
+        toast.error("Category is required");
+        return;
+      }
+      if (!data.desc) {
+        toast.error("Description is required");
+        return;
+      }
+      if (!data.content) {
+        toast.error("Content is required");
+        return;
+      }
 
     mutation.mutate(data);
   };
@@ -84,7 +103,7 @@ const Write = () => {
           className="text-2xl sm:text-3xl md:text-4xl font-semibold bg-transparent outline-none"
           type="text"
           placeholder="My Awesome Story"
-          name="title"
+          name="title" 
         />
         <div className="flex items-center gap-2 md:gap-4">
           <label htmlFor="" className="text-xs sm:text-sm">
@@ -106,7 +125,7 @@ const Write = () => {
         <textarea
           className="p-4 rounded-xl bg-white shadow-md"
           name="desc"
-          placeholder="A Short Description"
+          placeholder="A Short Description" 
         />
         <div className="flex flex-1 ">
           <div className="flex flex-col gap-2 mr-2">
